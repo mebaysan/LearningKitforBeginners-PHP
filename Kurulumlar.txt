@@ -1,0 +1,3 @@
+Php'yi çalıştırmamız için öncelikle kendimize bir localhost sunucu (Wamp,mamp,xamp,lamp,vs..) kuruyoruz
+Kurduğumuz sunucu dizinine gidip htdocs altında kodlarımızı yazabiliriz.
+Sunucu dizinlerinde genellikle index.php,index.html,index.js vs.. bu dosyalar okunur.(varsa)
