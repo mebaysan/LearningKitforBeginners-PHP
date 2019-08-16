@@ -1,0 +1,47 @@
+            Verilerde Sıralama (ORDER BY)
+SELECT * FROM uyeler ORDER BY id ASC  -> küçükten büyüğe
+SELECT * FROM uyeler ORDER BY id DESC -> büyükten küçüğe
+
+
+            Verilerde Limit (LIMIT)
+SELECT * FROM uyeler LIMIT 2 -> ilk 2 kaydı getirir
+SELECT * FROM uyeler LIMIT 2,2 -> 2.den başla ve 2 tane göster
+
+
+            Verilerde Gruplama (GROUP BY - HAVING)
+SELECT sehir MIN(maas) as Minimum, MAX(maas) as Maksimum, COUNT(id) as Kisiler FROM calisanlar GROUP BY sehir -> calisanlar tablosundan sehirleri seçer ve bunları sehir'e göre gruplar(aynı şehirleri aynı gruba alır), bu gruplardaki minimum maas ve max maas değerlerini alır listeler ve son olarak o şehirde kaç id var ise(count(id)) onu toplar listeler.
+SELECT sehir MIN(maas) as Minimum, MAX(maas) as Maksimum, COUNT(id) as Kisiler FROM calisanlar GROUP BY sehir HAVING Minimum > 2000 -> MIN(mass) as Minimum diyerek 'Minimum' diye yeni bir kolon oluşturduk ve bu kolona HAVING sayesinde erişebiliriz.
+
+
+            Verilerde Arama (LIKE)
+SELECT * FROM uyeler WHERE ad LIKE '%n' -> ad kolonunun son harfi 'n' ile bitenleri getirir. n% -> 'n' ile başlasın ve geri kalan istediği olabilir. %n% -> herhangi bir yerinde 'n' geçenleri listeler. _a% -> herhangi bir şey ile başlayabilir fakat ikinci karakteri 'a'olsun devamında istediği olabilir.
+
+
+            Verilerde Arama (IN)
+SELECT * FROM uyeler WHERE id IN (5,6,7) -> id'si 5-6-7 olanları getirir
+SELECT * FROM uyeler WHERE id NOT IN (5,6,7) -> id'si 5-6-7 olanları getirmez, bunlar hariç kalanları getirir
+
+
+            Verilerde Arama (FIND_IN_SET)
+SELECT * FROM diziler WHERE FIND_IN_SET(2,turler) -> diziler'i çeker içinde 2 geçen turler'i listeler
+
+
+            İki Değer Arasındakileri Seçmek (BETWEEN)
+SELECT * FROM calisanlar WHERE maas BETWEEN 2000 and 3000 -> maas'ı 2000 ile 3000 arasındakileri getirir.
+
+
+            İlişkili Tablolar (JOIN)
+"
+SELECT * FROM konular
+INNER JOIN uyeler ON uyeler.uye_id = konular.konu_id -> uyeler tablosundaki hangi alanla konular tablosundaki hangi alanı eşleştireceksin
+"
+INNER JOIN -> sadece eşleşen dataları getirir
+LEFT JOIN  -> soldaki tablodaki (konular) her şeyi getir, sağdaki tabloda(uyeler) eşleşen varsa onları getir
+RIGHT JOIN -> sağdaki tablodaki (uyeler) her şeyi getir, soldaki tabloda(konular) eşleşen varsa onları getir 
+
+
+            COUNT() SUM() MIN() MAX() FONKSIYONLARI
+COUNT() -> kolondaki toplam değer sayısını getirir
+SUM()   -> kolondaki değerlerin toplamını getirir
+MIN()   -> kolondaki minimum değeri getirir
+MAX()   -> kolondaki maximum değeri getirir
