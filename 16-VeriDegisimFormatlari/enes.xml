@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enes>
+    <ad>Enes</ad>
+    <soyad>Baysan</soyad>
+    <softwareSkills>
+        <web id="1">
+            <language>PHP</language>
+            <language>JavaScript</language>
+        </web>
+        <desktop id="2">
+            <language>C#</language>
+            <language>Java</language>
+
+        </desktop>
+        <other id="3">
+            <language>Python</language>
+        </other>
+    </softwareSkills>
+</enes>
