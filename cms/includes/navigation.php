@@ -25,10 +25,11 @@
                         <a><?php echo $category_title; ?></a>
                     </li>
                 <?php }; ?>
-                <!--
+
                 <li>
-                    <a href="#">About</a>
+                    <a href="/admin/index.php">Admin</a>
                 </li>
+                <!--
                 <li>
                     <a href="#">Services</a>
                 </li>

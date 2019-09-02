@@ -24,8 +24,8 @@
                 <ul class="list-unstyled">
                     <?php
                     $query = "select * from categories LIMIT 3";
-                    $select_all_categories_query = mysqli_query($connection, $query);
-                    while ($row = mysqli_fetch_assoc($select_all_categories_query)) { ?>
+                    $select_all_categories_sidebar = mysqli_query($connection, $query);
+                    while ($row = mysqli_fetch_assoc($select_all_categories_sidebar)) { ?>
                         <li><a href="#"><?php echo $row['category_title']; ?></a>
                         </li>
                     <?php }; ?>
