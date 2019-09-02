@@ -3,8 +3,7 @@
 
     <!-- Navigation -->
     <?php include "includes/admin_navigation.php"; ?>
-
-
+    <?php include "functions.php"; ?>
     <div id="page-wrapper">
 
         <div class="container-fluid">
@@ -16,17 +15,38 @@
                         Welcome to admin
                         <small>Author</small>
                     </h1>
+
+
+                    <!-- ADD CATEGORY -->
                     <div class="col-xs-6">
-                        <div style="display: none;" id="process_status">
-                        </div>
-                        <div class="form-group">
-                            <label for="category_title">Add Category</label>
-                            <input type="text" class="form-control" id="add_category_title">
-                            <input type="hidden" name="process_add_category_title" value="1">
-                        </div>
-                        <div class="form-group">
-                            <input class="btn btn-primary" type="submit" id="btn_add_category" value="Add Category">
-                        </div>
+                        <?php insert_category(); ?>
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label for="add_category_title">Add Category</label>
+                                <input type="text" class="form-control" id="add_category_title"
+                                       name="add_category_title">
+                            </div>
+                            <div class="form-group">
+                                <input class="btn btn-primary" type="submit" id="btn_add_category_title"
+                                       name="btn_add_category_title"
+                                       value="Add Category">
+                            </div>
+                        </form>
+                        <!-- /ADD CATEGORY -->
+
+
+                        <!-- UPDATE AND INCLUDE   -->
+                        <?php
+                        if (isset($_GET['edit'])) {
+                            $category_id = $_GET['edit'];
+                            include "includes/update_category.php";
+                            ?>
+
+
+                        <?php } ?>
+                        <!-- /UPDATE AND INCLUDE   -->
+
+
                     </div>
                     <div class="col-xs-6">
                         <table class="table table-striped table-hover">
@@ -34,25 +54,27 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Category Title</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php
-                            $query = "select * from categories";
-                            $select_all_categories = mysqli_query($connection, $query);
-                            while ($row = mysqli_fetch_assoc($select_all_categories)) {
-                                $category_id = $row['category_id'];
-                                $category_title = $row['category_title'];
-                                ?>
-                                <tr>
-                                    <td><?php echo $category_id ?></td>
-                                    <td><?php echo $category_title ?></td>
-                                </tr>
-                            <?php }; ?>
+
+
+                            <!--  GET ALL CATEGORIES  -->
+                            <?php get_all_categories(); ?>
+                            <!--  /GET ALL CATEGORIES  -->
+
+
                             </tbody>
+
+
+                            <!--  DELETE CATEGORY  -->
+                            <?php delete_category(); ?>
+                            <!--  /DELETE CATEGORY  -->
+
+
                         </table>
                     </div>
-
                 </div>
             </div>
             <!-- /.row -->
@@ -63,5 +85,5 @@
     </div>
     <!-- /#page-wrapper -->
     <?php include "includes/admin_footer.php"; ?>
-    <script src="/admin/js/my_ajax.js"></script>
+
 

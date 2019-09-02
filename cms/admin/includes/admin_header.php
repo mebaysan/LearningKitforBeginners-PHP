@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
 <?php include "../includes/db.php"; ?> <!-- bütün sayfalarda header kullanacağımız için buraya dahil ettik -->
+<?php include "/admin/functions.php"; ?>
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="tr">
