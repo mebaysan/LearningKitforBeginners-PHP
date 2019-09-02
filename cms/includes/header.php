@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
 
@@ -28,7 +28,6 @@
 
 <body>
 
-<!-- Navigation -->
-<?php include "includes/navigation.php"; ?>
+
 <!-- Page Content -->
 <div class="container">
