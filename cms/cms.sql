@@ -56,8 +56,9 @@ CREATE TABLE `posts` (
   `post_content` longtext,
   `post_tags` varchar(245) DEFAULT NULL,
   `post_comment_count` int(11) DEFAULT NULL,
+  `post_status` varchar(45) DEFAULT 'draft',
   PRIMARY KEY (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +67,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,1,'Python Dersleri','Baysan','2019-09-03','python.png','pythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpython','python,ai,learning',NULL),(2,2,'PHP','Baysan','2019-09-03','php.jpg','phpphpphpphpphpphpphpphpphpphpphpphp','php,web,developer',NULL),(3,3,'Java','Baysan','2019-09-03','java.jpg','javajavajavajavajavajavajavajava','java,desktop',NULL);
+INSERT INTO `posts` VALUES (1,1,'Python Dersleri','Baysan','2019-09-03','python.png','pythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpython','python,ai,learning',NULL,'draft'),(2,2,'PHP','Baysan','2019-09-03','php.jpg','phpphpphpphpphpphpphpphpphpphpphpphp','php,web,developer',NULL,'draft'),(3,3,'Java','Baysan','2019-09-03','java.jpg','javajavajavajavajavajavajavajava','java,desktop',NULL,'draft'),(4,1,'Machine Learning','Baysan','2019-09-03','','This is best','python,r,machinelearning',4,'published'),(5,1,'sad','asd','2019-09-03','','asdasdasd','python,r,machinelearning',4,'published');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-03 15:27:55
+-- Dump completed on 2019-09-03 17:49:05
