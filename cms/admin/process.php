@@ -12,14 +12,35 @@ if (isset($_POST['kategori'])) {
     $added_category_title_query = mysqli_query($connection, $query);
     if ($added_category_title_query) {
         $arr['process'] = 'success';
-        $arr['message'] = 'Process is success';
+        $arr['message'] = 'Category added was successfully';
         echo json_encode($arr);
-    }
-    else{
+    } else {
         $arr['process'] = 'danger';
         $arr['message'] = 'Query FAILED' . mysqli_error($connection);
         echo json_encode($arr);
         die();
+    }
+}
+
+
+
+if (isset($_POST['deleted_kategori_id'])) {
+    $deleted_kategori_id = $_POST['deleted_kategori_id'];
+    $query = "delete from categories where category_id = '$deleted_kategori_id' ";
+    $delete_kategori_query = mysqli_query($connection, $query);
+    if ($delete_kategori_query === true) {
+        $giden = array(
+            "message" => 'Category is deleted',
+            "process" => 'success',
+        );
+        echo json_encode($giden);
+    } else {
+        $giden = array(
+            "message" => 'Category is not deleted! QUERY FAILED',
+            "process" => 'danger',
+        );
+        echo json_encode($giden);
+
     }
 }
 ?>
