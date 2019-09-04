@@ -55,7 +55,7 @@ CREATE TABLE `comments` (
   `comment_status` varchar(245) DEFAULT NULL,
   `comment_date` date DEFAULT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (1,10,'Baysan','menesbaysan@gmail.com','this is just an example','approve','2019-09-04'),(4,9,'deneme','deneme@gmail.com','deneme','approve','2019-09-04');
+INSERT INTO `comments` VALUES (1,10,'Baysan','menesbaysan@gmail.com','this is just an example','approve','2019-09-04'),(4,9,'deneme','deneme@gmail.com','deneme','approve','2019-09-04'),(6,10,'denemeccount','ccoutn@gmail.com','asdasd','approve','2019-09-04'),(7,10,'fdasfd','asdasd@gmail.com','asdasdasd','approve','2019-09-04'),(8,10,'fdasfd','asdasd@gmail.com','asdasdasd','approve','2019-09-04'),(9,11,'asdasd','enes@iyc.org.tr','asdasd','approve','2019-09-04'),(10,11,'asd','enes@iyc.org.tr','asdqw3123123','approve','2019-09-04'),(11,11,'asd','enes@iyc.org.tr','asdqw3123123dsa13asd','approve','2019-09-04');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +87,7 @@ CREATE TABLE `posts` (
   `post_comment_count` int(11) DEFAULT NULL,
   `post_status` varchar(45) DEFAULT 'draft',
   PRIMARY KEY (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,8 +96,39 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,17,'Python Dersleri','Baysan','2019-09-03','python.png','pythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpython','python,ai,learning',NULL,'draft'),(2,14,'PHP','Baysan','2019-09-03','php.jpg','phpphpphpphpphpphpphpphpphpphpphpphp','php,web,developer',NULL,'draft'),(9,14,'Deneme','Baysan','2019-09-04','','asdsad','asdasd',4,'published');
+INSERT INTO `posts` VALUES (1,17,'Python Dersleri','Baysan','2019-09-03','python.png','pythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpython','python,ai,learning',NULL,'draft'),(2,14,'PHP','Baysan','2019-09-03','php.jpg','phpphpphpphpphpphpphpphpphpphpphpphp','php,web,developer',NULL,'draft'),(9,14,'Deneme','Baysan','2019-09-04','','asdsad','asdasd',4,'published'),(10,14,'ccountdenemesi','denemeccount','2019-09-04','','sadads','asdasd',3,'draft'),(11,18,'asdasd','asdasdasd','2019-09-04','','asdasd','asd',3,'published');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(245) DEFAULT NULL,
+  `password` varchar(245) DEFAULT NULL,
+  `user_firstname` varchar(245) DEFAULT NULL,
+  `user_lastname` varchar(245) DEFAULT NULL,
+  `email` varchar(245) DEFAULT NULL,
+  `user_image` longtext,
+  `user_role` varchar(245) DEFAULT NULL,
+  `randSalt` varchar(245) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'mebaysan','12345','Enes','Baysan','menesbaysan@gmail.com',NULL,'admin',NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -109,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-04 16:55:05
+-- Dump completed on 2019-09-04 18:03:15

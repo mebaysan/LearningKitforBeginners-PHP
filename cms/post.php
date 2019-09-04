@@ -52,10 +52,14 @@
                             comment_content,comment_status,comment_date) values('$post_id','$comment_author',
                             '$comment_email','$comment_content','unapproved',now()) ";
                 $create_comment_query = mysqli_query($connection, $query);
-                if ($create_comment_query)
+                if ($create_comment_query) {
                     echo "<div class='alert alert-success'>Comment Create was success!</div>";
-                else
+                    header("Location: post.php?p_id=$post_id");
+                } else
                     die("<div class='alert alert-warning'>Comment Create was not success! QUERY FAILED" . mysqli_error($connection) . "</div>");
+                $query = "update posts set post_comment_count = post_comment_count + 1 where post_id = '$post_id'";
+                mysqli_query($connection, $query);
+
             }
 
 
