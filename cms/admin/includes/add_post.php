@@ -37,7 +37,19 @@ if (isset($_POST['add_post_submit'])) {
     </div>
     <div class="form-group">
         <label>Post Category Id</label>
-        <input type="text" class="form-control" name="add_post_category_id">
+        <select name="add_post_category_id" class="form-control" id="add_post_category">
+            <?php
+            $query = "select * from categories";
+            $select_categories = mysqli_query($connection, $query);
+            if (!$select_categories)
+                die("QUERY FAILED:" . mysqli_error($connection));
+            while ($row = mysqli_fetch_assoc($select_categories)) {
+                $cat_id = $row['category_id'];
+                $cat_title = $row['category_title'];
+                ?>
+                <option value="<?php echo $cat_id; ?>"><?php echo $cat_title; ?></option>
+            <?php }; ?>
+        </select>
     </div>
     <div class="form-group">
         <label>Post Author</label>

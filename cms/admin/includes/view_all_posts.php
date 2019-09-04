@@ -1,4 +1,15 @@
 <table class="table table-bordered table-striped table-hover table-responsive">
+    <?php
+    if (isset($_GET['delete'])) {
+        $deleted_post_id = $_GET['delete'];
+        $query = "delete from posts where post_id = '$deleted_post_id'";
+        $deleted_post_query = mysqli_query($connection, $query);
+        if ($deleted_post_query)
+            echo "<div class='alert alert-success'>Delete was successful</div>";
+        else
+            echo "<div class='alert alert-danger'>Delete was not success! QUERY FAILED</div>";
+
+    } ?>
     <thead>
     <tr>
         <th>Id</th>
@@ -10,6 +21,7 @@
         <th>Tags</th>
         <th>Comments</th>
         <th>Date</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -40,6 +52,9 @@
             <td><?php echo $post_tags; ?></td>
             <td><?php echo $post_comment_count; ?></td>
             <td><?php echo $post_date; ?></td>
+            <td><a href="posts.php?source=edit_post&p_id=<?php echo $post_id; ?>" class="btn btn-info btn-sm">Edit</a>
+            <td><a href="posts.php?delete=<?php echo $post_id; ?>" class="btn btn-danger btn-sm">Delete</a>
+            </td>
         </tr>
     <?php }; ?>
     </tbody>
