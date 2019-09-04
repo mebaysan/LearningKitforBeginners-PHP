@@ -36,7 +36,7 @@ if (isset($_POST['add_post_submit'])) {
         <input type="text" class="form-control" name="add_post_title">
     </div>
     <div class="form-group">
-        <label>Post Category Id</label>
+        <label>Post Category</label>
         <select name="add_post_category_id" class="form-control" id="add_post_category">
             <?php
             $query = "select * from categories";
