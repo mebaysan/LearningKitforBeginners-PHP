@@ -113,12 +113,12 @@ CREATE TABLE `users` (
   `password` varchar(245) DEFAULT NULL,
   `user_firstname` varchar(245) DEFAULT NULL,
   `user_lastname` varchar(245) DEFAULT NULL,
-  `email` varchar(245) DEFAULT NULL,
+  `user_email` varchar(245) DEFAULT NULL,
   `user_image` longtext,
   `user_role` varchar(245) DEFAULT NULL,
   `randSalt` varchar(245) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'mebaysan','12345','Enes','Baysan','menesbaysan@gmail.com',NULL,'admin',NULL);
+INSERT INTO `users` VALUES (1,'mebaysan','12345','Enes','Baysan','menesbaysan@gmail.com',NULL,'admin',NULL),(3,'deme12','1234512','deneme12','deme12','debeneme12@gmail.com',NULL,'subscriber',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -140,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-04 18:03:15
+-- Dump completed on 2019-09-05 11:11:17
