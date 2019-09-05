@@ -25,10 +25,13 @@
                         <a><?php echo $category_title; ?></a>
                     </li>
                 <?php }; ?>
-
-                <li>
-                    <a href="/admin/index.php">Admin</a>
-                </li>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    ?>
+                    <li>
+                        <a href="/admin/index.php">Admin</a>
+                    </li>
+                <?php }; ?>
                 <!--
                 <li>
                     <a href="#">Services</a>

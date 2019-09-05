@@ -87,7 +87,7 @@ CREATE TABLE `posts` (
   `post_comment_count` int(11) DEFAULT NULL,
   `post_status` varchar(45) DEFAULT 'draft',
   PRIMARY KEY (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,17,'Python Dersleri','Baysan','2019-09-03','python.png','pythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpython','python,ai,learning',NULL,'draft'),(2,14,'PHP','Baysan','2019-09-03','php.jpg','phpphpphpphpphpphpphpphpphpphpphpphp','php,web,developer',NULL,'draft'),(9,14,'Deneme','Baysan','2019-09-04','','asdsad','asdasd',4,'published'),(10,14,'ccountdenemesi','denemeccount','2019-09-04','','sadads','asdasd',3,'draft'),(11,18,'asdasd','asdasdasd','2019-09-04','','asdasd','asd',3,'published');
+INSERT INTO `posts` VALUES (1,17,'Python Dersleri','Baysan','2019-09-03','python.png','pythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpythonpython','python,ai,learning',NULL,'draft'),(2,14,'PHP','Baysan','2019-09-03','php.jpg','phpphpphpphpphpphpphpphpphpphpphpphp','php,web,developer',NULL,'draft'),(9,14,'Deneme','Baysan','2019-09-04','','asdsad','asdasd',4,'published'),(10,14,'ccountdenemesi','denemeccount','2019-09-04','','sadads','asdasd',3,'draft'),(11,18,'asdasd','asdasdasd','2019-09-04','','asdasd','asd',3,'published'),(12,14,'This is antother post','Baysan','2019-09-05','','sadasd','asdasd',0,'published');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,9 +116,9 @@ CREATE TABLE `users` (
   `user_email` varchar(245) DEFAULT NULL,
   `user_image` longtext,
   `user_role` varchar(245) DEFAULT NULL,
-  `randSalt` varchar(245) DEFAULT NULL,
+  `randSalt` varchar(245) DEFAULT '$2y$10$iusesomecrazystring22',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'mebaysan','12345','Enes','Baysan','menesbaysan@gmail.com',NULL,'admin',NULL),(3,'deme12','1234512','deneme12','deme12','debeneme12@gmail.com',NULL,'subscriber',NULL);
+INSERT INTO `users` VALUES (1,'mebaysan','12345','Enes','Baysan','menesbaysan@gmail.com',NULL,'admin',NULL),(3,'deme12','1234512','deneme12','deme12','debeneme12@gmail.com',NULL,'subscriber',NULL),(4,'denemebaysan','12345','denematition','deneme','enes@iyc.org.tr',NULL,'subscriber','$2y$10$iusesomecrazystring22'),(5,'demo','12345',NULL,NULL,'crazydemo@hotmail.com',NULL,'subscriber','$2y$10$iusesomecrazystring22');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -140,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-05 11:11:17
+-- Dump completed on 2019-09-05 16:28:24
