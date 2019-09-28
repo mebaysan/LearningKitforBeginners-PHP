@@ -1,0 +1,20 @@
+kendi mvc çekirdeğimi yazıyorum.
+gerekli bilgileri bu txt içerisinde paylaşacağım.
+
+local olarak kullandığınız sunucu içerisinde apache > conf > httpd.conf  dosyasını bulmalısınız
+burada Virtual Hosts kısmında include kısmını aktif etmelisiniz -> diyez # işaretini kaldırın
+daha sonra apache > conf > extra > httpd-vhosts.conf dosyasını açın
+<VirtualHost *:80>  -> 80 portunda
+ServerName mvc -> tarayıcıya ne yazılınca açılsın
+DocumentRoot "C:/xampp/htdocs/mvc" -> hangi klasör açılsın
+</VirtualHost>
+
+ekleyin
+
+daha sonra  Windows > System32 > drivers > etc > hosts    bu dosyayı açın. 
+Burası bizim local olarak belirlediğimiz url'de belirlediğimiz dosyanın çalışmasını sağlayacak
+
+127.0.0.1       mvc  -> bu portta bu url çalışsın dedik.
+
+
+daha sonra url kısmına http://mvc diyerek klasörümüze gidebiliriz.
