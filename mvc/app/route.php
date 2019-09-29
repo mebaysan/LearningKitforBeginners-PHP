@@ -1,2 +1,3 @@
 <?php
-App::getAction('/','/');
+App::getAction('/','/',false);
+//App::getAction('/index','/default/index');
