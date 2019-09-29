@@ -1,0 +1,11 @@
+php artisan serve -> uygulamayı localhostta deploy eder
+php artisan routes:list -> elindeki route'ların listesini verir
+php artisan make:controller --resource XyzController -> crud methodlarını bulunduran bir controller verir
+php artisan make:controller PostController -> Basic bir controller verir
+# config klasörü altında database dosyasında sadece default kısmında kullanacağımız veritabanı provider'i belirtmeliyiz. adresleri db username vs. .env içerisinde belirtilir
+php artisan migrate -> veritabanı için migration yapar
+php artisan make:migration create_posts_table --create="posts"   --> posts -> Table adı, create_post_table -> migrations adı
+# oluşan migration dosyasına veritabanı oluşturmak için gerekli fonksiyonlar yazılır. Yapılan her değişiklik için 'php artisan migrate' komutu kullanılıp veritabanı senkronize edilmelidir.
+php artisan migrate:rollback  -> bir önceki migration'a döner
+php artisan make:migration add_is_admin_column_to_post_table --table="posts"  -> posts table için bir migration açıyoruz
+php artisan migrate:reset -> migrations'ları resetler
