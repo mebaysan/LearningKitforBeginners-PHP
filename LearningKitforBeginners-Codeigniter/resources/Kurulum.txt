@@ -1,0 +1,2 @@
+cms.sql adlı şemayı veritabanınıza import ediniz
+codeigniter'ı çıkarttık ve panel klasörümüze system application ve index.php'yi çıkarttık
