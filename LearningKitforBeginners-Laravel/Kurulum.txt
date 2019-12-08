@@ -1,0 +1,6 @@
+# Bu proje Laravel 6.5.2 ile yapılmıştır
+1-) Composer kurulur
+2-) Laravel'i kurmak istediğimiz dizine gidiyoruz (C:\xampp\htdocs>)
+3-) composer create-project --prefer-dist laravel/laravel proje_adi # projeyi kurar
+4-) proje içerisinde "php artisan" komutu ile ilgili komutları bulabiliriz (python manage.py gibi)
+5-) php artisan --verison -> bize versiyonu verir
