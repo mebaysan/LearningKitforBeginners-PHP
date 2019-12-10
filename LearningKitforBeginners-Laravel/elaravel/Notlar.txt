@@ -1,0 +1,2 @@
+!-) View'lar resources/views/view_adi.blade.php olarak bulunur. ".blade.php" ile bitmek zorundadır
+!-) Route'lar routes/web.php altında bulunur.
